@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" 
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<p th:text="${themleaf}"></p>
+<!--shiro:hasPermisson 权限验证  -->
+<div shiro:hasPermisson="user:add"><a href="/add">进入添加功能</a><br></div>
+
+<div shiro:hasPermisson="user:add"><a href="/update">进入更新功能</a><br></div>
+<a href="/tologin">返回登陆页面</a>
+</body>
+</html>
