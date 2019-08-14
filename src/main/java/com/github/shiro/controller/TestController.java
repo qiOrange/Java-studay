@@ -1,5 +1,6 @@
 package com.github.shiro.controller;
 
+
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -16,11 +17,15 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class TestController {
-
-	@RequestMapping("themleaf")
-	public String themleaf(Model model) {
-		model.addAttribute("themleaf", "good !");
-		return "themleaf";
+	@RequestMapping("/red")
+	public String red() {
+		return "grap";
+	}
+	
+	@RequestMapping("index")
+	public String index(Model model) {
+		model.addAttribute("themleaf", "欢迎进入主页面 !");
+		return "index";
 	}
 	
 	@RequestMapping("/add")
@@ -31,7 +36,10 @@ public class TestController {
 	public String update() {
 		return "/user/updateuser";
 	}
-	
+	@RequestMapping("/upload")
+	public String unload() {
+		return "upload";
+	}
 	@RequestMapping("/tologin")
 	public String toLogin() {
 		return "login";
@@ -58,7 +66,7 @@ public class TestController {
 			/**
 			 * 登陆成功将会重定向到业务界面
 			 */
-			return "redirect:/themleaf";
+			return "redirect:/index";
 		} catch (UnknownAccountException e) {
 			/**
 			 * 这里会抛出一个用户不存在的异常 返回给前端一个信息告之业务处理失败

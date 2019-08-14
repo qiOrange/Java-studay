@@ -12,7 +12,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 
-import com.github.shiro.User;
+import com.github.shiro.entity.User;
 /**
  * 验证逻辑，shiro 业务层 认证用户是否具有相应的权限
  * 规则 com.github.shiro.config.shiroConfig 在该类中实现
@@ -52,7 +52,6 @@ public class UserRealm extends AuthorizingRealm{
 		//有控制器层获取token 数据
 		UsernamePasswordToken passwordToken=(UsernamePasswordToken)token;
 		String username = passwordToken.getUsername();
-		System.out.println(username);
 		
 		if (username.equals(admin)) {
 			perm="user:add";

@@ -40,7 +40,7 @@ public class shiroConfig {
 		 * authc 拦截返回 setLoginUrl("/tologin");
 		 */
 		Map<String, String>filterMap=new LinkedHashMap<>();
-		filterMap.put("/themleaf", "anon");
+		filterMap.put("/index", "anon");
 		filterMap.put("/login", "anon");
 		filterMap.put("/add", "perms[user:add]");
 		filterMap.put("/update", "perms[user:update]");
